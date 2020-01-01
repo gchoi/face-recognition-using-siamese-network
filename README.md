@@ -91,11 +91,11 @@ Selected images (faces) were converted to grayscale (`convert-to-gray.py`).
 
 * Distance measure (Euclidian distance)
 
-\( d(r_1,r_2) = \sqrt(\sum_{i=1}^{n}{(r_{1}^{i} - r_{2}^{i})^2}) \)
+$ d(r_1,r_2) = \sqrt(\sum_{i=1}^{n}{(r_{1}^{i} - r_{2}^{i})^2}) $
 
 * Loss(cost) function: Contrastive Loss
 
-\( L(r_0, r_1, y) = y ||r_0 - r_1|| + (1 - y) \mathrm{max}(0, m - ||r_0 - r_1||) \)
+$$ L(r_0, r_1, y) = y ||r_0 - r_1|| + (1 - y) \mathrm{max}(0, m - ||r_0 - r_1||) $$
 
 ### (7) Predict
 (`siamese-nework-face-prediction.py`)
