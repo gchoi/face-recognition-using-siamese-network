@@ -91,18 +91,20 @@ Selected images (faces) were converted to grayscale (`convert-to-gray.py`).
 
 * Distance measure (Euclidian distance)
 
-$ d(r_1,r_2) = \sqrt(\sum_{i=1}^{n}{(r_{1}^{i} - r_{2}^{i})^2}) $
+![Euclidian distance](./assets/12.jpg)
 
 * Loss(cost) function: Contrastive Loss
 
-$$ L(r_0, r_1, y) = y ||r_0 - r_1|| + (1 - y) \mathrm{max}(0, m - ||r_0 - r_1||) $$
+![Contrastive Loss](./assets/13.jpg)
+
+You can find an article about "Good explanations on Ranking Loss" in [here](https://gombru.github.io/2019/04/03/ranking_loss/).
 
 ### (7) Predict
 (`siamese-nework-face-prediction.py`)
 
 Firstly, a reference(anchor) image is chosen and feed-forwarded through the trained Siamese network to get the embedding(feature) vector - `featVec_1`.
 
-Next, an image per the category is chosen and feed-forwarded through the trained Siamese network to get the embedding(feature) vector - `featVec_i`, \(i = 1, ..., N\) where \(N\) is the number of categories.
+Next, an image per the category is chosen and feed-forwarded through the trained Siamese network to get the embedding(feature) vector - `featVec_i`, i = 1, ..., N where N is the number of categories.
 
 Next, find `i` such that the distance of `featVec_i` from `featVec_1` is minimum and then `i` is the category the reference(anchor) belongs to.
 
@@ -115,5 +117,3 @@ Next, find `i` such that the distance of `featVec_i` from `featVec_1` is minimum
 Try to test in your web browser using the Flask app!
 
 ![Web Server Using Flask](./assets/11.jpg)
-
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
